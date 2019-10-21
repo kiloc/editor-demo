@@ -24646,7 +24646,7 @@
 		;postData = vS7.join("&");
 
 		if (/^mml/.test(postData)) {
-			url = 'http://www.wiris.net/demo/editor/mathml2latex'
+			url = '//www.wiris.net/demo/editor/mathml2latex'
 		} else {
 			url = '/'
 		}

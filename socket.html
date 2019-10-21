@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./wiris/editor/editor.js"></script>
+  <script>
+		var editor;
+		window.onload = function () {
+			editor = com.wiris.jsEditor.JsEditor.newInstance({ 'language': 'zh' });
+			editor.insertInto(document.getElementById('editorContainer'));
+			console.log(editor.formulaDisplay);
+		}
+
+		function outputResult() {
+			editor.formulaDisplay.vto('latex');
+			document.getElementById('result').value = editor.getMathML();
+		}
+  </script>
+</head>
+<body>
+<h1>我的第一个标题</h1>
+<p>我的第一个段落。</p>
+<div id="editorContainer"></div>
+<textarea id="result" value=""></textarea>
+<button onclick="outputResult();">获取</button>
+</body>
+</html>
